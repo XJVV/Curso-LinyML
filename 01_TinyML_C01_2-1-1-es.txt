@@ -1,0 +1,135 @@
+<img src="https://prod-edx-ai-translations-assets.s3.amazonaws.com/google-translate.png" alt="Traducido por el logotipo de Google"><br><br>[GENERADO AUTOMÁTICAMENTE ]<br>LAURENCE MORONEY: Hola, soy Laurence Moroney.
+y dirijo la defensa de la IA en Google, trabajando
+en un producto llamado TensorFlow del que escuchará todo en este curso.
+Pero antes de entrar en los aspectos prácticos del uso del aprendizaje automático
+y programar con él, solo quiero explorar qué es realmente el aprendizaje automático.
+está en un nivel fundamental.
+Personalmente me gusta verlo como un nuevo paradigma para la programación de computadoras,
+donde en lugar de simplemente codificar una solución, puedes enseñar
+una computadora cómo aprender una solución.
+Esto puede ser increíblemente útil y puede abrirle nuevos escenarios.
+para resolver problemas que no se pueden resolver sólo con programación.
+Vamos a sumergirnos.
+La codificación explícita es el pan de cada día de los desarrolladores de software
+por todo el mundo.
+Piensas en el escenario en el que estás trabajando.
+o el problema que estás tratando de resolver,
+y expresas la solución a eso definiendo las reglas que
+determinar el comportamiento de un programa.
+Por ejemplo, en este juego de ladrillos, la pelota se mueve a lo largo de un camino, que puede llegar
+cambia cuando golpea un ladrillo.
+Como programador, debes descubrir el comportamiento.
+¿Cómo rebota la pelota?
+¿Qué ladrillo quito?
+¿Qué pasa cuando la pelota golpea una pared?
+¿O qué pasa cuando la pelota no toca el bate?
+Todo debe resolverse de antemano.
+Está predeterminado por el programador y luego se codifica y se prueba.
+Cuanto más complejo sea el escenario, más código tendrás que descubrir.
+Y con la ley de rendimientos decrecientes, a menudo
+encontrar escenarios que simplemente no es factible resolver
+todo el código para.
+Exploraremos uno de ellos en un momento.
+Pero primero, este diagrama muestra escenarios de codificación como el que
+acabamos de explorar.
+La programación tradicional consiste en resolver un problema descubriendo y expresando
+roles que utilizan un lenguaje de programación como Java, C++ o Python.
+Luego tienes que actuar sobre datos, como la ubicación de la pelota.
+y los ladrillos del juego anterior, y luego obtienes respuestas de eso.
+¿Se acabó el juego?
+¿Sube la puntuación?
+¿Dónde debería trazarse la pelota a continuación?
+Es realmente poderoso, pero puede ser limitado.
+Así que exploremos un escenario en el que esto no funciona nada bien.
+Considere la detección de actividad.
+Digamos que quieres escribir una aplicación que utilice sensores.
+en un teléfono o un reloj o cualquier otra cosa para determinar la actividad de una persona.
+Podrías, por ejemplo, utilizar los datos sobre su velocidad.
+y escribe una regla que determine si la velocidad está por debajo de cierta cantidad,
+entonces probablemente estén caminando.
+Tienes datos.
+Tienes una regla.
+Y luego podrás obtener una respuesta.
+Y luego diga que extiende esto para determinar si son
+corriendo basándose en esa regla.
+Si, por ejemplo, la velocidad es inferior a 4 millas por hora, entonces están caminando.
+De lo contrario, están huyendo.
+Vale genial.
+Eso todavía funciona.
+Y luego tal vez puedas extenderlo aún más para ver si están en bicicleta.
+Si la velocidad es inferior a 4, están caminando.
+De lo contrario, si es inferior a 12, se están ejecutando.
+De lo contrario, podemos decir que están en bicicleta.
+Pero entonces, ¿cómo manejarías el golf?
+¿Qué regla podrías escribir que determine
+¿Que en realidad están jugando golf?
+Además, a estas alturas probablemente ya te habrás dado cuenta de que las otras reglas también son
+un poco ingenuo.
+No puedes ir sólo por la velocidad.
+Por ejemplo, podrías correr cuesta abajo más rápido que tu bicicleta cuesta arriba.
+Así que volvamos a nuestro diagrama.
+Recuerde que mencionamos que la programación tradicional es
+cuando creas reglas en un lenguaje de programación y estas reglas actúan sobre los datos
+y brindarte respuestas.
+Con la detección de actividad, habíamos creado reglas.
+para descubrir la actividad del usuario, ya sea caminar, andar en bicicleta o correr,
+pero luego nos topamos con un muro con el golf.
+No sólo eso, también podemos ver que nuestro algoritmo era un poco ingenuo.
+Nuestras reglas realmente no funcionan tan bien.
+Por ejemplo, puedes correr cuesta abajo más rápido que subir cuesta arriba en bicicleta.
+Y como resultado, su aplicación podría fallar si se escribe con reglas como esta.
+El aprendizaje automático puede ayudar a resolver este problema.
+Y se puede representar con una simple reordenación del diagrama.
+Entonces, en lugar de intentar descubrir las reglas que actúan sobre los datos
+para darte una respuesta, ¿y si vas al revés?
+y tu proporcionas las respuestas con los datos
+y tienes una computadora que puede descifrar las reglas que
+¿Los combinará?
+Una vez hecho esto, puede aplicar esas reglas a datos futuros.
+para encontrar las respuestas al respecto.
+Entonces, en nuestro escenario de detección de actividad, podríamos recopilar una gran cantidad de datos.
+de los sensores y etiquetarlos con la actividad que está siguiendo el usuario.
+Ahora, al hacer coincidir partes de los datos con la etiqueta que
+describe la actividad, la computadora podría
+ser capaz de descubrir las reglas de lo que hace que una actividad sea caminar o correr
+o andar en bicicleta o, sí, incluso jugar al golf.
+Por ejemplo, he resaltado cuatro bits dentro de cada uno de los bloques binarios,
+y podrás notar que estos cuatro bits son
+diferente entre las cuatro actividades.
+Ahora bien, eso podría ser una señal de qué actividad es cuál.
+Con el aprendizaje automático, tenemos algunas API que
+nos permiten escribir código para identificar potencialmente dichos factores distintivos.
+Y lo verás un poco más adelante en este curso.
+Pero primero, consideremos a un nivel muy alto cómo funciona esto.
+Primero, la computadora adivinará la relación
+entre los datos y sus etiquetas.
+Lo hace inicializando aleatoriamente una red neuronal.
+Y profundizarás en eso un poco más adelante.
+Pero más allá de los detalles, se trata simplemente de conjeturas sobre la relación.
+Luego mide qué tan buena o mala es esa suposición.
+La terminología que se utiliza a menudo aquí es pérdida.
+Una mayor pérdida es más o menos análoga a una menor precisión.
+Entonces podrás medir los resultados de tu suposición,
+y luego puede utilizar los datos de la medición de precisión
+para determinar su próxima suposición, optimizando
+basado en lo que ya sabes.
+Y si luego repites el proceso con la lógica siendo
+que cada suposición posterior sea mejor que la anterior,
+entonces su modelo se vuelve cada vez más preciso.
+Es aprender de la experiencia cuál podría ser la mejor suposición.
+Así que volvamos al diagrama que describe
+Aprendizaje automático desde un alto nivel.
+Aquí cambié la palabra "respuestas" por "etiquetas".
+y eso generalmente se usa para el término que describe sus datos.
+Pero el resto sigue en pie.
+Comienza con los datos de la etiqueta y sigue el proceso que mencioné anteriormente.
+Y terminas con un conjunto de reglas que relacionan esos datos con esas etiquetas.
+Esto construye un modelo y, a partir de este modelo, puedes darle nuevos datos,
+y descubrirá qué tan cerca se ajustan esos datos al conjunto de etiquetas.
+Y te devolverá algo llamado conjunto de inferencias,
+y estas son las probabilidades de que los datos coincidan con cada etiqueta específica.
+Bien, ahora es tu turno.
+En la siguiente sección, les daré un conjunto de números.
+Y hay una relación que une la x con la y, una regla
+que puedas descubrir.
+Pruébalo y piensa en cómo lo descubriste.
